@@ -1,0 +1,40 @@
+include application
+- var currentPage = "static"
+include navBar
+
+
+.container.custom-font(style="max-width: 1440px;")
+    h3.m-3='Все перелеты'
+    .row.mt-4
+        .col-12
+            .card
+                .card-header='Фильтр'
+                .card-body
+                    form#loginform(method="post")
+                        div.form-group.mb-2
+                            label='Город отправления'
+                            input.form-control#source(type='text', name='source' placeholder='Город отправления', autocomplete='new-password')
+                        button.btn.enter_button.btn-success(href="#" type="submit")="Применить"
+            .card.mt-3
+                .card-header.check-icn='Перелеты'
+                .card-body
+                     table.table.table-striped.table-bordered.custom-font(style="width: 100%;")
+                        thead
+                            tr
+                                th(scope="col")='Номер рейса'
+                                th(scope="col")='Город отправления'
+                                th(scope="col")='Город прибытия'
+                                th(scope="col")='Дата начала'
+                                th(scope="col")='Дни'
+                                th(scope="col")='Время вылета'
+                                th(scope="col")='Время посадки'
+                        tbody#result_table
+                            for flight in flights
+                                tr
+                                    td=flight.flight
+                                    td=flight.source
+                                    td=flight.dest
+                                    td=flight.start_date
+                                    td=flight.days
+                                    td=flight.depart
+                                    td=flight.arrival

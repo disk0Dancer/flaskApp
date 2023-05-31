@@ -1,0 +1,30 @@
+include application
+- var currentPage = "dynamic"
+include navBar
+
+
+.container.custom-font(style="max-width: 1440px;")
+    h3.m-3='Все курсы'
+    .row.mt-4
+        .col-12
+            .card
+                .card-header='Фильтр'
+                .card-body
+                    div.form-group.mb-2
+                        label='Город отправления'
+                        input.form-control#source(type='text', name='source' placeholder='Город отправления', autocomplete='new-password')
+                    button.btn.enter_button.btn-success#filter(href="#" type="submit")="Применить"
+            .card.mt-3
+                .card-header='Перелеты'
+                .card-body
+                     table.table.table-striped.table-bordered.custom-font(style="width: 100%;")
+                        thead
+                            tr
+                                th(scope="col")='Номер рейса'
+                                th(scope="col")='Город отправления'
+                                th(scope="col")='Город прибытия'
+                                th(scope="col")='Дата начала'
+                                th(scope="col")='Дни'
+                                th(scope="col")='Время вылета'
+                                th(scope="col")='Время посадки'
+                        tbody#result_table

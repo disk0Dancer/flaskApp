@@ -1,0 +1,24 @@
+.navbar.navbar-expand-lg.navbar-light.bg-light.custom-font
+    .container-fluid
+        a.navbar-brand.d-flex.flex-column.text-right.m-0.p-0(style='font-weight: bold;' href='/')
+            span='Пример лабораторной работы'
+            small(style='font-weight: none; font-size: 12px;')='Лабораторная работа №6'
+        button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+            span(class="navbar-toggler-icon")
+        div#navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.mx-auto
+                li.nav-item
+                    if currentPage == 'static'
+                        a.nav-link.fw-bold(href="/")='Статическая страница'
+                    else
+                        a.nav-link(href="/")='Статическая страница'
+                li.nav-item
+                    if currentPage == 'dynamic'
+                        a.nav-link.fw-bold(href="/dynamic")='Страница с JS'
+                    else
+                        a.nav-link(href="/dynamic")='Страница с JS'
+                li.nav-item
+                    if currentPage == 'stats'
+                        a.nav-link.fw-bold(href="#")='Графическая статистика'
+                    else
+                        a.nav-link(href="#")='Графическая статистика'
